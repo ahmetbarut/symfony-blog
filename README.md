@@ -6,13 +6,12 @@ Burda yaptıklarımı teker teker anlatmaya çalışacağım.
 Wiki'ye tüm içerikleri koymak daha mantıklı geldi hem parça parça oluyor hemde daha düzenli ve kolay bir şekilde düzeltme yapılabiliyor.
 
 # İçerikler
-* Veritabanı ayarları
-  * Postgresql veritabanı
-* Routing
-  * Kullanılan rota türleri ve dosyalar
-  * Rota dosyalarını yapılandırma ve symfony tarafından yükleme
-  * Rota tanımlama
-  * Controller Yükleme
+* [Veritabanı ayarları](wiki/2-veritabani.md)
+* [Routing](wiki/3-route-ve-route-tanimlama.md)
+  * [Kullanılan rota türleri ve dosyalar](wiki/1-baslangic.md#router)
+  * [Rota dosyalarını yapılandırma ve symfony tarafından yükleme](wiki/1-baslangic.md#rota-yapılandırması)
+  * [Rota tanımlama](wiki/3-route-ve-route-tanimlama.md#tanimlama)
+  * [Controller Yükleme](wiki/3-route-ve-route-tanimlama.md#tanimlama)
   * Parametreler
 * Controller
   * Template işleme 
@@ -39,3 +38,5 @@ Wiki'ye tüm içerikleri koymak daha mantıklı geldi hem parça parça oluyor h
   * veri listeleme
 * Authenctication
 * Authorization
+
+[Blog Teması](https://github.com/welisonmenezes/wm-simple-blog-template)
