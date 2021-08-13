@@ -7,10 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BlogController extends AbstractController
 {
-    public function index($page): Response
+    public function index(): Response
     {
-        dd($page);
-
         return $this->render('index.html.twig');
     }
 }

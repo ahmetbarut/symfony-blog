@@ -12,7 +12,7 @@ Wiki'ye tüm içerikleri koymak daha mantıklı geldi hem parça parça oluyor h
   * [Rota dosyalarını yapılandırma ve symfony tarafından yükleme](wiki/1-baslangic.md#rota-yapılandırması)
   * [Rota tanımlama](wiki/3-route-ve-route-tanimlama.md#tanimlama)
   * [Controller Yükleme](wiki/3-route-ve-route-tanimlama.md#tanimlama)
-  * Parametreler
+  * [Parametreler](wiki/3-route-ve-route-tanimlama.md#route-parametreleri)
 * Controller
   * Template işleme 
   * Formlar
