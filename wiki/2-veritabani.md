@@ -8,3 +8,8 @@ Symfony'de bazı(Coğu da olabilir. Emin değilim :smile) yapılandırmalar `.en
 > DATABASE_URL="postgresql://ahmet:1234@127.0.0.1:5432/blog?serverVersion=13&charset=utf8"
 
 Veritabanı bağlantısını bu şekilde yapıyoruz. Gereken bilgileri girdikten sonra kaydedin.
+
+**!NOT**: Veritabanı adını boş bırakmayın, eğer veritabanı mevcut değilse, bu komut ile oluşturabilirsiniz:
+```shell
+    php bin/console doctrine:database:create
+```

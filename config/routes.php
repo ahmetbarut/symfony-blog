@@ -3,8 +3,10 @@
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 return function(RoutingConfigurator $route){
-    $route->add('user', '/')
+    $route->add('home', '/')
         ->controller([\App\Controller\BlogController::class, 'index'])
-        ->methods(['get'])
-        ;
+        ->methods(['get']);
+    $route->add('blog.create', '/blog/create')->controller([\App\Controller\BlogController::class, 'create'])->methods(['GET', "HEAD"]);
+
+
 };

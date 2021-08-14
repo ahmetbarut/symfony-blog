@@ -1,22 +1,29 @@
+# Controller
+`Denetleyici` yada `controller`, ben `controller` diyeceğim.
+`controller`ler `src/Controller` dizini içerisinde bulunur. `Controller`'i ister kendiniz yeni dosya oluşturarak veya `php console/bin make:controller ControllerAdı` komutunu yazarakta oluşturabilirsiniz. Komutu çalıştırarak oluşturursanız, `twig` şablonu da oluşturur. İsterseniz hemen deneyin. 
 
-Öncelikle bir `controller`'e ihtiyacım var onu oluşturmam gerekiyor.
-```shell
-    php bin/console make:controller BlogController
+```shell 
+    php console/bin make:controller HomeController
 ```
-Eğer `controller` oluşturmaya çalışınca bu hatayı alıyorsanız:
+Bu şekilde çıktı aldım: 
 ```shell
-  There are no commands defined in the "make" namespace.                                                
-                                                                                                        
-  You may be looking for a command provided by the "MakerBundle" which is currently not installed. Try  
-   running "composer require symfony/maker-bundle --dev".                                               
+created: src/Controller/HomeController.php
+created: templates/home/index.html.twig
 ```
-ilk önce `composer require symfony/maker-bundle --dev` bu komutu çalıştırın paketi kursun ardından `.env` dosyasına girip `APP_ENV`'i `dev` yapın. Bu şekilde paket sadece geliştirme ortamında kurulur. Eğer siz üretimde de kullanmak istiyorsanız
- `composer require symfony/maker-bundle` komutunu çalıştırın öncesi geliştirme olarak kurdu. 
- `config/bundles.php` dosyasından :
+
+Şablona ihtiyacınız yoksa eğer `--no-template` bayrağını ekleyin:
+```shell
+    php bin/console make:controller BlogController --no-template
+```
+Bu şekilde sadece `controller` oluşturacaktır.
+
+`Controller` üzerinden şablon ve veri döndürmek için `render` yöntemi kullanacağız.
+
 ```php
-    Symfony\Bundle\MakerBundle\MakerBundle::class => ['all' => true],
+    public function index(): Response
+    {
+        return $this->render('index.html.twig', ["mesaj" => "Merhaba Symfony!"]);
+    }
 ```
-`['all' => true]` yani sadece geliştirme ortamı değil. 
 
-
-Yola devam edelim `make:controller` komutunu çalıştırdıktan sonra hem `controller` hemde template'i oluşturdu. Şimdi yönlendirmeyi yapalım.
+Ben [bu şablonu](https://github.com/welisonmenezes/wm-simple-blog-template) alıp parçaladım ve kullanıyorum. Parçalama işlemini ve `twig`i ayrıyeten anlatmayı düşünmüyorum.
