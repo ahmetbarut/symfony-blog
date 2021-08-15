@@ -12,12 +12,15 @@ class BlogController extends AbstractController
 {   
     /**
      * Blogun anasayfasını döndürür.
-     * @url /
      * @return Response
      */
     public function index(): Response
     {
-        return $this->render('index.html.twig');
+        $post = $this->getDoctrine()->getManager()->getRepository(Post::class);
+
+        return $this->render('index.html.twig', [
+            'posts' => $post->findAll()
+        ]);
     }
 
     /**

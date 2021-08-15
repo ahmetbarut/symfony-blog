@@ -1,4 +1,4 @@
-**Daha Yeni Başladım Henüz Bitmemiştir !**
+**Sürekli Yeni İçerikler Eklenecektir!**
  
 # Symfony ile Basit Blog
 Burda yaptıklarımı teker teker anlatmaya çalışacağım.
