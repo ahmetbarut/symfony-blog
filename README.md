@@ -13,9 +13,10 @@ Wiki'ye tüm içerikleri koymak daha mantıklı geldi hem parça parça oluyor h
   * [Rota tanımlama](wiki/3-route-ve-route-tanimlama.md#tanimlama)
   * [Controller Yükleme](wiki/3-route-ve-route-tanimlama.md#tanimlama)
   * [Parametreler](wiki/3-route-ve-route-tanimlama.md#route-parametreleri)
-* Controller
-  * Template işleme 
-  * Formlar
+* [Controller](wiki/4-controller.md#template-isleme)
+  * [Template işleme](wiki/4-controller.md#template-isleme)
+    * Sadece `AbstractController` sınıfını soyutlayan sınıflar için kullanımı mevcut.
+  * [Formlar](wiki/5-form.md)
   * Veriler
 * Entity
   * Veritabanı işlerimizi yapar

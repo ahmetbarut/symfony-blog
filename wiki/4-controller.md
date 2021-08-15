@@ -1,3 +1,5 @@
+- [Controller](#controller)
+  - [Template İşleme](#template-i̇şleme)
 # Controller
 `Denetleyici` yada `controller`, ben `controller` diyeceğim.
 `controller`ler `src/Controller` dizini içerisinde bulunur. `Controller`'i ister kendiniz yeni dosya oluşturarak veya `php console/bin make:controller ControllerAdı` komutunu yazarakta oluşturabilirsiniz. Komutu çalıştırarak oluşturursanız, `twig` şablonu da oluşturur. İsterseniz hemen deneyin. 
@@ -18,7 +20,7 @@ created: templates/home/index.html.twig
 Bu şekilde sadece `controller` oluşturacaktır.
 
 `Controller` üzerinden şablon ve veri döndürmek için `render` yöntemi kullanacağız.
-
+## Template İşleme
 ```php
     public function index(): Response
     {

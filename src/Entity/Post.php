@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
@@ -30,24 +31,18 @@ class Post
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $posted_by;
+    private $author;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="posts")
      */
-    private $isActive;
+    private $category_id;
 
-    /**
-     * @ORM\Column(type="datetime_immutable")
-     */
-    private $created_at;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="name")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $category;
-
+    // public static function loadValidatorMetaData(ClassMetadata $classMetadata): void
+    // {
+        // $classMetadata->addPropertyConstraint('title')
+    // }
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -77,50 +72,26 @@ class Post
         return $this;
     }
 
-    public function getPostedBy(): ?string
+    public function getAuthor(): ?string
     {
-        return $this->posted_by;
+        return $this->author;
     }
 
-    public function setPostedBy(string $posted_by): self
+    public function setAuthor(string $author): self
     {
-        $this->posted_by = $posted_by;
+        $this->author = $author;
 
         return $this;
     }
 
-    public function getIsActive(): ?bool
+    public function getCategoryId(): ?Category
     {
-        return $this->isActive;
+        return $this->category_id;
     }
 
-    public function setIsActive(bool $isActive): self
+    public function setCategoryId(?Category $category_id): self
     {
-        $this->isActive = $isActive;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->created_at;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?Category $category): self
-    {
-        $this->category = $category;
+        $this->category_id = $category_id;
 
         return $this;
     }
