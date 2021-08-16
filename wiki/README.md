@@ -1,9 +1,8 @@
 
 
-- [Başlangıç](#başlangıç)
-  - [Kurulum](#kurulum)
-      - [symfony-cli ile kurulum](#symfony-cli-ile-kurulum)
-      - [composer ile kurulum](#composer-ile-kurulum)
+- [Kurulum](#kurulum)
+  - [symfony-cli ile kurulum](#symfony-cli-ile-kurulum)
+  - [composer ile kurulum](#composer-ile-kurulum)
 - [Dizinleri Tanıyalım](#dizinleri-tanıyalım)
   - [bin](#bin)
   - [config](#config)
@@ -23,20 +22,19 @@
   - [Yaml](#yaml)
   - [php](#php)
 - [Rota yapılandırması](#rota-yapılandırması)
-# Başlangıç
-Merhaba, bu projemde basit bir blog yazacağım . ben symfony'nin [framework-bundle(Çerçeve Paketi)](https://github.com/symfony/framework-bundle)  kurdum. Bu, web uygulamaları geliştirmek için öneriliyor ve web geliştirme için gereken bileşenleri dahil ediyor. Ayrıyeten `skeleton` var o da daha az bileşen ile yüklü geliyor. Örnek verecek olursam `Form` kullanacaksınız, `symfony/form` paketini yüklemeniz gerekecektir ve bunun benzeri gibi paketler yüklemeniz gerekecektir. Bu nedenle daha hızlı bir başlnafıç için bunu seçtim.
 
-## Kurulum
+
+# Kurulum
 Kurulum için `symfony-cli` kullanacağım, siz isterseniz composer kullanabilirsiniz.
 
-#### symfony-cli ile kurulum
+## symfony-cli ile kurulum
 ```shell 
     symfony new blog --full
 ```
 `blog` projemin adı, eğer o isimde bir dizin varsa projeyi oluşturmayacaktır.
 `--full` bayrağı da gerekli olan tüm bileşenleri kuracak. Eğer `--full` bayrağını koymazsanız size sadece iskeleti kurar.
 
-#### composer ile kurulum
+## composer ile kurulum
 `symfony-cli` ile aynı şekilde kurulumu yapar arada fark yok.
 ```shell
  composer create-project symfony website-skeleton blog
@@ -94,7 +92,7 @@ Symfony, bize router için 5 kullanım sunuyor.
 * [annotations](#annotations)
 * [attributes(Controller oluşturunca methodda tanımlı olarak gelir)](#attributes)
 * [yaml(5.2'den sonra varsayılan olarak geliyor)](#yaml)
-* **xml** => Anlatmaycam burayı
+* **xml** => Bu bölümü anlatmayacağım, diğerleriyle kurulumu vs benzer.
 * [php](#php)
 ## annotations
 `annotations`(Açıklamalar), methodun üzerinde yazılır.  
