@@ -15,5 +15,9 @@ return function(RoutingConfigurator $route){
         ->controller([\App\Controller\BlogController::class, 'store'])
         ->methods(['post']);
 
+    $route->add('blog.show', '/show/{slug}')
+        ->controller([\App\Controller\BlogController::class, 'show'])
+        ->methods(['get']);
+
 
 };

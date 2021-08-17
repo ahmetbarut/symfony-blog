@@ -15,14 +15,14 @@
 			{% for post in posts %}
 				<div class="col-md-6 col-left">
 				<div class="card rounded-0 border-0">
-					<a href="blog-post.html" class="post-img">
+					<a href="{{ path('blog.show', {slug : post.slug}) }}" class="post-img">
 						<img src="assets/images/post-4.jpg" class="card-img-top rounded-0" alt="">
 					</a>
 					<div class="card-body">
 						<div class="post-category">
 							<a href="blog-list.html">{{ post.title }}</a>
 						</div>
-						<a href="blog-post.html">
+						<a href="{{ path('blog.show', {slug : post.slug}) }}">
 							<h5 class="card-title">{{ post.content }}</h5>
 						</a>
 						<ul class="post-meta">

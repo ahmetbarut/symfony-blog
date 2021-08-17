@@ -38,6 +38,11 @@ class Post
      */
     private $category_id;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
     // public static function loadValidatorMetaData(ClassMetadata $classMetadata): void
     // {
         // $classMetadata->addPropertyConstraint('title')
@@ -92,6 +97,18 @@ class Post
     public function setCategoryId(?Category $category_id): self
     {
         $this->category_id = $category_id;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

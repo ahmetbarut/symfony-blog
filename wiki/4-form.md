@@ -1,7 +1,10 @@
 - [Giriş](#giriş)
 - [Form Oluşturma](#form-oluşturma)
+  - [Şablonda Kullanma](#şablonda-kullanma)
 - [Form Türleri](#form-türleri)
 - [Form Sınıfı Oluşturma](#form-sınıfı-oluşturma)
+- [Form Helper](#form-helper)
+  - [form](#form)
 # Giriş 
 Symfonyde formları kullanarak çoğu sorundan sizi kurtaracaktır. Doğrulamalar, formları oluşturma, verileri ekleme gibi gibi sorunlardan sizi kurtarır. Örneğin form sınıfını oluştururken `Entity/Model` sınıfına bağlarsanız, bütün alanları kendisi ekleyecek, zorunlu olanları belirtecek ve ilişkisel olan sütunları da çekecektir. Yani form kullanmanız sizi çok rahatlatabilir. İlk başlarda karışık ve zor gibi görünebilir ama ilerledikçe güzel olduğunu farkedeceksiniz.
 
@@ -35,6 +38,7 @@ $form = $this->createFormBuilder()
     return $this->render('index.html.twig', ['form' => $form->createView()]);
 }
 ```
+## Şablonda Kullanma
 Şablon'da formu bu şekilde gösterebiliriz:
 ```php
     {{ form(form) }}
@@ -85,3 +89,14 @@ Symfony'de formu ister bir modele bağlayın istersenizde formu kendi başına k
     php console/bin make:form LoginForm
 ```
 Komutu çalıştırdıktan sonra `src/Form/LoginFormType.php` dosyasının oluştuğunu göreceksiniz.
+
+# Form Helper
+`twig` içinde form yardımcı fonksiyonları. 
+| Parametre   | Açıklama    |
+| ----------- | ----------- |
+| `view`      | render edilen form       |
+| `ozellik`   | Form'a eklenmesini istediğimiz form özellikleri. Örn: `method="POST"`        |
+## form
+`form` fonksiyonunu, genelde tam bir formu, özelleştirme istemeyen bir form oluşturmak için kullanılır. Örn: form için gereken bütün inputlar ve butonu girdiğinizi varsayalım, bunun için `form` fonksiyonunu kullanmanız yeterlidir.
+kullanım : `{{ form(view, ozellik = opsiyonel) }}`
+

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Post;
 use App\Form\CreatePostType;
+use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,8 +17,10 @@ class BlogController extends AbstractController
      */
     public function index(): Response
     {
+        // Doctrine yöneticisi 
         $post = $this->getDoctrine()->getManager()->getRepository(Post::class);
-
+        
+        
         return $this->render('index.html.twig', [
             'posts' => $post->findAll()
         ]);
@@ -77,8 +80,7 @@ class BlogController extends AbstractController
         */
         $form = $this->createForm(CreatePostType::class);
 
-        $post = $this->getDoctrine()->getManager();
-
+        $entityManager = $this->getDoctrine()->getManager();
         // Burda formu inceler, form gönderilmiş ve onaylanmış ise devam eder,
         // Onay almamışsa geriye döner ve hataları basar.
         $form->handleRequest($request);
@@ -87,10 +89,10 @@ class BlogController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) { 
 
             // Burda veritabanına kaydetmek için kuyruğa alır.
-            $post->persist($form->getData());
+            $entityManager->persist($form->getData());
 
             // Kuyruğu temizler, yani veritabanına ekler. Olası hata durumunda error alırsınız zaten.
-            $post->flush();
+            $entityManager->flush();
             
             // İşimiz bitti artık anasayfaya gidebiliriz.
             return $this->redirectToRoute('home');
@@ -102,5 +104,10 @@ class BlogController extends AbstractController
             'form' => $form->createView()
         ]);
 
+    }
+
+    public function show(string $slug, PostRepository $post)
+    {   
+        dd($post->findOneBy(['slug' =>$slug]));
     }
 }
