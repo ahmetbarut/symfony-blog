@@ -1,4 +1,4 @@
-**Sürekli Yeni İçerikler Eklenecektir!**
+# Arşivlendi
  
 # Symfony ile Basit Blog
 Burda yaptıklarımı teker teker anlatmaya çalışacağım.
